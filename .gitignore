@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.pyc
+
+# Dataset/model artifacts can be regenerated and may be large.
+data/creditcard.csv
+artifacts/
+
