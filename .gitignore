@@ -6,5 +6,5 @@ __pycache__/
 
 # Dataset/model artifacts can be regenerated and may be large.
 data/creditcard.csv
-artifacts/
-
+artifacts/*
+!artifacts/.gitkeep
