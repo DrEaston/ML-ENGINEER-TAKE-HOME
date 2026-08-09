@@ -3,8 +3,10 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 *.pyc
+*.pdf
+fraud-isolation_forest-v1.joblib
 
-# Dataset/model artifacts can be regenerated and may be large.
+# Downloaded data and generated reports are not submission inputs.
 data/creditcard.csv
-artifacts/*
-!artifacts/.gitkeep
+model_comparison_metrics.csv
+model_operational_benchmarks.csv
