@@ -6,7 +6,8 @@ import os
 from dataclasses import dataclass
 from typing import Any, Mapping
 
-os.environ["LOKY_MAX_CPU_COUNT"] = "1"
+N_JOBS = 4
+os.environ["LOKY_MAX_CPU_COUNT"] = str(N_JOBS)
 
 import joblib
 import numpy as np
@@ -147,6 +148,7 @@ def train_anomaly_scorer(
             "n_estimators": 200,
             "contamination": "auto",
             "random_state": random_state,
+            "n_jobs": N_JOBS,
         }
         defaults.update(params)
         estimator = IsolationForest(**defaults)
@@ -154,6 +156,7 @@ def train_anomaly_scorer(
         defaults = {
             "n_neighbors": 20,
             "contamination": "auto",
+            "n_jobs": N_JOBS,
         }
         defaults.update(params)
         # Novelty mode is required to score transactions not seen during fit.
